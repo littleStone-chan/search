@@ -26,6 +26,6 @@
     - windows
         - 切换路径到elasticsearch-7.5.2的plugins目录，在当先目录创建新的文件夹，文件夹名为：```analysis-ik```。
         - 下载ik分词器到analysis-ik目录，并且解压文件至当前目录。如图:
-        ![analysis-ik目录截图](./src/main/resources/static/mk/analysis-ik-screenshot.jpg)    
+        ![analysis-ik目录截图](https://chendownload.oss-cn-shenzhen.aliyuncs.com/images/analysis-ik-screenshot.jpg)    
     - 重启elasticsearch。
         
