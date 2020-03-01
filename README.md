@@ -29,3 +29,63 @@
         ![analysis-ik目录截图](https://chendownload.oss-cn-shenzhen.aliyuncs.com/images/analysis-ik-screenshot.jpg)    
     - 重启elasticsearch。
         
+4. 创建elasticsearch的车辆索引
+    - 打开```http://127.0.0.1:5601/```        
+    - 点击左边的工具栏的 Dev Tools
+    ![左边的工具栏的 Dev Tools截图](https://chendownload.oss-cn-shenzhen.aliyuncs.com/images/kibana-dev-tools.png)
+    - 创建车辆索引:
+ ```
+ PUT /car?include_type_name=false
+{
+   "settings" : {
+      "number_of_shards" : 1,
+      "number_of_replicas" : 0,
+    "analysis": {
+      "filter": {
+        "my_synonym_filter":{
+          "type":"synonym",
+          "synonyms_path":"analysis-ik/synonyms.txt"
+        }
+      },
+      "analyzer": {
+        "ik_syno":{
+          "type":"custom",
+          "tokenizer":"ik_smart",
+          "filter":["my_synonym_filter"]
+        },
+        "ik_syno_max":{
+          "type":"custom",
+          "tokenizer":"ik_max_word",
+          "filter":["my_synonym_filter"]
+        }
+    }  }
+   },
+   "mappings": {
+     "properties": {
+       "id":{"type":"integer"},
+       "car_brand_name":{
+         "type": "text",
+         "analyzer": "ik_syno_max",
+         "search_analyzer": "ik_syno"
+       },
+       "car_series_name":{
+         "type": "text",
+         "analyzer": "ik_syno_max",
+         "search_analyzer": "ik_syno"
+       },
+       "car_model_name":{
+         "type": "text",
+         "analyzer": "ik_syno_max",
+         "search_analyzer": "ik_syno"
+       },
+       "mileage":{"type": "double"}, 
+       "new_car_price":{"type": "double"},
+       "create_time":{"type": "date"},
+       "price":{"type": "double"},
+       "purchase_price":{"type": "double"},
+       "predict_price":{"type": "double"},
+       "location":{"type": "geo_point"}
+     }
+   }
+}
+```   
