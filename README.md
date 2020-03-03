@@ -33,6 +33,8 @@
     - 打开```http://127.0.0.1:5601/```        
     - 点击左边的工具栏的 Dev Tools
     ![左边的工具栏的 Dev Tools截图](https://chendownload.oss-cn-shenzhen.aliyuncs.com/images/kibana-dev-tools.png)
+    - 在config目录中创建analysis-ik文件，并且在analysis-ik文件夹里创建synonyms.txt文件
+    ！[synonyms.txt文件](https://chendownload.oss-cn-shenzhen.aliyuncs.com/images/synonyms-ik.png)
     - 创建车辆索引:
  ```
  PUT /car?include_type_name=false
@@ -89,3 +91,13 @@
    }
 }
 ```   
+
+5. 生成车辆数据和实时更新车辆数据
+    - 在数据库mysql运行car.sql文件
+    - linux环境：
+        - 解压logstash-7.5.2.zip
+        - 在bin目录创建mysql文件夹，将本项目logstash文件夹的五个文件复制到mysql文件夹里。
+        ![logstash文件夹的五个文件](https://chendownload.oss-cn-shenzhen.aliyuncs.com/images/logstash-files.png)
+        - 修改相应的car_create.conf文件和car_update.conf文件的配置
+        - 创建elasticsearch的car数据：```bin/logstash -f bin/mysql/car_create.conf ```
+        - 实时更新car数据：```bin/logstash -f bin/mysql/car_update.conf ```
