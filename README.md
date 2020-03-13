@@ -2,7 +2,9 @@
 
 1. 安装包快速下载地址
     * [elasticsearch-7.5.2 WINDOWS版本](https://chendownload.oss-cn-shenzhen.aliyuncs.com/software/elasticsearch-7.5.2-windows-x86_64.zip)
+    * [elasticsearch-7.5.2 LINUX版本](https://chendownload.oss-cn-shenzhen.aliyuncs.com/software/elasticsearch-7.5.2-linux-x86_64.tar.gz)
     * [kibana-7.5.2 WINDOWS版本](https://chendownload.oss-cn-shenzhen.aliyuncs.com/software/kibana-7.5.2-windows-x86_64.zip)
+    * [kibana-7.5.2 LINUX版本](https://chendownload.oss-cn-shenzhen.aliyuncs.com/software/kibana-7.5.2-linux-x86_64.tar.gz)
     * [kibana-7.5.2 MAC版本](https://chendownload.oss-cn-shenzhen.aliyuncs.com/software/kibana-7.5.2-darwin-x86_64.tar.gz)
     * [ik 分词器](https://chendownload.oss-cn-shenzhen.aliyuncs.com/software/elasticsearch-analysis-ik-7.5.2.zip)
     * [logstash-7.5.2.zip](https://chendownload.oss-cn-shenzhen.aliyuncs.com/software/logstash-7.5.2.zip)
