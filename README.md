@@ -32,6 +32,7 @@
     - 重启elasticsearch。
         
 4. 创建elasticsearch的车辆索引
+    - 在elasticsearch-7.5.2\config\analysis-ik的目录创建,synonyms.txt文件。
     - 打开```http://127.0.0.1:5601/```        
     - 点击左边的工具栏的 Dev Tools
     ![左边的工具栏的 Dev Tools截图](https://chendownload.oss-cn-shenzhen.aliyuncs.com/images/kibana-dev-tools.png)

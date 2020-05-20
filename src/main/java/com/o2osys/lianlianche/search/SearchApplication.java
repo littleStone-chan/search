@@ -1,4 +1,4 @@
-package com.o2osys.lianlianche.car.search;
+package com.o2osys.lianlianche.search;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
