@@ -14,7 +14,7 @@ SELECT
 	info.owner_city_id,
 	info.putway_time,
 	info.price,
-concat(c.lng,',',c.lat) as location,
+concat(c.lat,',',c.lng) as location,
 car_gearbox_type,
 info.type,
 car_body_type,
@@ -22,5 +22,5 @@ info.status
 FROM
 	car_info info
 LEFT JOIN (SELECT car_id,img_path from car_image where type = 1 limit 0,1 ) image ON image.car_id = info.id
-LEFT JOIN car c ON c.id = info.id
-where valid = 1
+LEFT JOIN car_merchant.store_info c ON c.id = info.store_id
+where info.valid = 1
