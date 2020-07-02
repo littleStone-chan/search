@@ -1,6 +1,7 @@
 package com.o2osys.lianlianche.search;
 
 import com.o2osys.lianlianche.search.contants.ElasticsearchConstant;
+import com.o2osys.lianlianche.search.model.CarInfo;
 import com.o2osys.lianlianche.search.model.Person;
 import com.o2osys.lianlianche.search.service.PersonService;
 import org.junit.Test;
@@ -19,6 +20,10 @@ public class ElasticsearchApplicationTests {
 
     @Autowired
     private PersonService personService;
+
+    @Autowired
+    private CarInfoService carService;
+
 
     /**
      * 测试删除索引
